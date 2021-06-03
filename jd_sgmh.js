@@ -11,17 +11,13 @@
 [task_local]
 #闪购盲盒
 20 8 * * * https://gitee.com/lxk0301/jd_scripts/raw/master/jd_sgmh.js, tag=闪购盲盒, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
-
 ================Loon==============
 [Script]
 cron "20 8 * * *" script-path=https://gitee.com/lxk0301/jd_scripts/raw/master/jd_sgmh.js, tag=闪购盲盒
-
 ===============Surge=================
 闪购盲盒 = type=cron,cronexp="20 8 * * *",wake-system=1,timeout=3600,script-path=https://gitee.com/lxk0301/jd_scripts/raw/master/jd_sgmh.js
-
 ============小火箭=========
 闪购盲盒 = type=cron,script-path=https://gitee.com/lxk0301/jd_scripts/raw/master/jd_sgmh.js, cronexpr="20 8 * * *", timeout=3600, enable=true
-
  */
 const $ = new Env('闪购盲盒');
 //Node.js用户请在jdCookie.js处填写京东ck;
@@ -29,12 +25,8 @@ const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 let appId = '1EFRXxg' , homeDataFunPrefix = 'interact_template', collectScoreFunPrefix = 'harmony', message = ''
 let lotteryResultFunPrefix = homeDataFunPrefix, browseTime = 6
 const inviteCodes = [
-  'T008674qB11BCjVWmIaW5kRrbA@T010-awtBEAR9wCjVWmIaW5kRrbA@T0225KkcREgRpwKDcRn1nKUMdQCjVWmIaW5kRrbA@T018-KQ1GU9HvwySakKhygCjVWmIaW5kRrbA@T016Z2fMmYSmIuhN96ZuCjVWmIaW5kRrbA@T0225KkcRB5P_QHSJhzxwqQNcQCjVWmIaW5kRrbA',
-  'T010-awtBEAR9wCjVWmIaW5kRrbA@T008674qB11BCjVWmIaW5kRrbA@T0225KkcREgRpwKDcRn1nKUMdQCjVWmIaW5kRrbA@T018-KQ1GU9HvwySakKhygCjVWmIaW5kRrbA@T016Z2fMmYSmIuhN96ZuCjVWmIaW5kRrbA@T0225KkcRB5P_QHSJhzxwqQNcQCjVWmIaW5kRrbA',
-  '0225KkcREgRpwKDcRn1nKUMdQCjVWmIaW5kRrbA@T008674qB11BCjVWmIaW5kRrbA@T010-awtBEAR9wCjVWmIaW5kRrbA@T018-KQ1GU9HvwySakKhygCjVWmIaW5kRrbA@T016Z2fMmYSmIuhN96ZuCjVWmIaW5kRrbA@T0225KkcRB5P_QHSJhzxwqQNcQCjVWmIaW5kRrbA',
-  'T018-KQ1GU9HvwySakKhygCjVWmIaW5kRrbA@T008674qB11BCjVWmIaW5kRrbA@T010-awtBEAR9wCjVWmIaW5kRrbA@T0225KkcREgRpwKDcRn1nKUMdQCjVWmIaW5kRrbA@T016Z2fMmYSmIuhN96ZuCjVWmIaW5kRrbA@T0225KkcRB5P_QHSJhzxwqQNcQCjVWmIaW5kRrbA',
-  'T016Z2fMmYSmIuhN96ZuCjVWmIaW5kRrbA@T008674qB11BCjVWmIaW5kRrbA@T010-awtBEAR9wCjVWmIaW5kRrbA@T0225KkcREgRpwKDcRn1nKUMdQCjVWmIaW5kRrbA@T018-KQ1GU9HvwySakKhygCjVWmIaW5kRrbA@T0225KkcRB5P_QHSJhzxwqQNcQCjVWmIaW5kRrbA',
-  'T0225KkcRB5P_QHSJhzxwqQNcQCjVWmIaW5kRrbA@T008674qB11BCjVWmIaW5kRrbA@T010-awtBEAR9wCjVWmIaW5kRrbA@T0225KkcREgRpwKDcRn1nKUMdQCjVWmIaW5kRrbA@T018-KQ1GU9HvwySakKhygCjVWmIaW5kRrbA@T016Z2fMmYSmIuhN96ZuCjVWmIaW5kRrbA'
+  'T0225KkcRxwap1DfIBPynfVbcgCjVQmoaT5kRrbA@T0205KkcOGRatCyXYGmj6LBsCjVQmoaT5kRrbA@T0225KkcRB0Z9VbQcRP8wvcOJwCjVQmoaT5kRrbA@T0205KkcJEJvrAG1WXicw5J-CjVQmoaT5kRrbA@T0225KkcRhga91XSIUiikvACJgCjVQmoaT5kRrbA@T0225KkcRRlP8wDRKB_xwP9edwCjVQmoaT5kRrbA@0205KkcPkxMtC6eSHue56hVCjVQmoaT5kRrbA@0225KkcRBpMoVPUJxL8kvMNdgCjVQmoaT5kRrbA',
+  'T0225KkcRxwap1DfIBPynfVbcgCjVQmoaT5kRrbA@T0205KkcOGRatCyXYGmj6LBsCjVQmoaT5kRrbA@T0225KkcRB0Z9VbQcRP8wvcOJwCjVQmoaT5kRrbA@T0205KkcJEJvrAG1WXicw5J-CjVQmoaT5kRrbA@T0225KkcRhga91XSIUiikvACJgCjVQmoaT5kRrbA@T0225KkcRRlP8wDRKB_xwP9edwCjVQmoaT5kRrbA@0205KkcPkxMtC6eSHue56hVCjVQmoaT5kRrbA@0225KkcRBpMoVPUJxL8kvMNdgCjVQmoaT5kRrbA',
 ];
 const randomCount = $.isNode() ? 20 : 5;
 const notify = $.isNode() ? require('./sendNotify') : '';
@@ -60,7 +52,7 @@ const JD_API_HOST = `https://api.m.jd.com/client.action`;
   for (let i = 0; i < cookiesArr.length; i++) {
     cookie = cookiesArr[i];
     if (cookie) {
-      $.UserName = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1])
+      $.UserName = decodeURIComponent(cookie.match(/pt_pin=(.+?);/) && cookie.match(/pt_pin=(.+?);/)[1])
       $.index = i + 1;
       $.isLogin = true;
       $.nickName = '';
@@ -117,7 +109,7 @@ function interact_template_getHomeData(timeout = 0) {
             console.log("\n" + data.data.result.taskVos[i].taskType + '-' + data.data.result.taskVos[i].taskName  + '-' + (data.data.result.taskVos[i].status === 1 ? `已完成${data.data.result.taskVos[i].times}-未完成${data.data.result.taskVos[i].maxTimes}` : "全部已完成"))
             //签到
             if (data.data.result.taskVos[i].taskName === '邀请好友助力') {
-              console.log(`\n【京东账号${$.index}（${$.UserName}）的${$.name}好友互助码】${data.data.result.taskVos[i].assistTaskDetailVo.taskToken}\n`);
+              console.log(`您的好友助力码为:${data.data.result.taskVos[i].assistTaskDetailVo.taskToken}`)
               for (let code of $.newShareCodes) {
                 if (!code) continue
                 await harmony_collectScore(code, data.data.result.taskVos[i].taskId);
@@ -316,7 +308,7 @@ function readShareCode() {
   console.log(`开始`)
   return new Promise(async resolve => {
     $.get({
-      url: `http://share.turinglabs.net/api/v3/sgmh/query/${randomCount}/`,
+      url: `https://github.com/ZFeng3242/RandomShareCode/raw/main/JD_SGMH.json`,
       'timeout': 10000
     }, (err, resp, data) => {
       try {
@@ -325,7 +317,7 @@ function readShareCode() {
           console.log(`${$.name} API请求失败，请检查网路重试`)
         } else {
           if (data) {
-            console.log(`随机取${randomCount}个码放到您固定的互助码后面(不影响已有固定互助)`)
+            console.log(`随机取固定助力码放到您互助码后面(不影响已有固定互助)`)
             data = JSON.parse(data);
           }
         }
@@ -351,7 +343,7 @@ function TotalBean() {
         "Connection": "keep-alive",
         "Cookie": cookie,
         "Referer": "https://wqs.jd.com/my/jingdou/my.shtml?sceneval=2",
-        "User-Agent": $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1") : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1")
+        "User-Agent": $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : "jdapp;iPhone;9.2.2;14.2;%E4%BA%AC%E4%B8%9C/9.2.2 CFNetwork/1206 Darwin/20.1.0") : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.2.2;14.2;%E4%BA%AC%E4%B8%9C/9.2.2 CFNetwork/1206 Darwin/20.1.0")
       }
     }
     $.post(options, (err, resp, data) => {
@@ -367,7 +359,7 @@ function TotalBean() {
               return
             }
             if (data['retcode'] === 0) {
-              $.nickName = (data['base'] && data['base'].nickname) || $.UserName;
+              $.nickName = data['base'].nickname;
             } else {
               $.nickName = $.UserName
             }

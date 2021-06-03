@@ -48,7 +48,7 @@ function cashOut() {
     $.get(
       taskUrl(
         `consume/CashOut`,
-        `ddwMoney=100&dwIsCreateToken=0&ddwMinPaperMoney=100000&strPgtimestamp=${$.currentToken['timestamp']}&strPhoneID=${$.currentToken['phoneid']}&strPgUUNum=${$.currentToken['farm_jstoken']}`
+        `ddwMoney=100&dwIsCreateToken=0&ddwMinPaperMoney=150000&strPgtimestamp=${$.currentToken['timestamp']}&strPhoneID=${$.currentToken['phoneid']}&strPgUUNum=${$.currentToken['farm_jstoken']}`
       ), 
       async (err, resp, data) => {
         try {
@@ -74,7 +74,7 @@ function taskUrl(function_path, body) {
       Cookie: $.currentCookie,
       Accept: "*/*",
       Connection: "keep-alive",
-      Referer:"https://st.jingxi.com/fortune_island/cash.html?jxsid=16178634353215523301&_f_i_jxapp=1",
+      Referer:"https://st.jingxi.com/fortune_island/cash.html?jxsid=16115391812299482601&_f_i_jxapp=1",
       "Accept-Encoding": "gzip, deflate, br",
       Host: "m.jingxi.com",
       "User-Agent":"jdpingou;iPhone;4.1.4;14.3;9f08e3faf2c0b4e72900552400dfad2e7b2273ba;network/wifi;model/iPhone11,6;appBuild/100415;ADID/00000000-0000-0000-0000-000000000000;supportApplePay/1;hasUPPay/0;pushNoticeIsOpen/0;hasOCPay/0;supportBestPay/0;session/428;pap/JA2019_3111789;brand/apple;supportJDSHWK/1;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148",
