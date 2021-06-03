@@ -49,7 +49,7 @@ if ($.isNode()) {
 }
 let wantProduct = ``;//心仪商品名称
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
-const inviteCodes = [`P04z54XCjVWnYaS5u2ak7ZCdan1Bdd2GGiWvC6_uERj`, 'P04z54XCjVWnYaS5m9cZ2ariXVJwHf0bgkG7Uo'];
+const inviteCodes = ['T008674qB11BCjVWnYaS5kRrbA', 'T010-awtBEAR9wCjVWnYaS5kRrbA','T0225KkcREgRpwKDcRn1nKUMdQCjVWnYaS5kRrbA','T018-KQ1GU9HvwySakKhygCjVWnYaS5kRrbA','T016Z2fMmYSmIuhN96ZuCjVWnYaS5kRrbA','T0225KkcRB5P_QHSJhzxwqQNcQCjVWnYaS5kRrbA'];
 !(async () => {
   await requireConfig();
   if (!cookiesArr[0]) {
@@ -622,7 +622,7 @@ function jdfactory_getHomeData() {
 function readShareCode() {
   console.log(`开始`)
   return new Promise(async resolve => {
-    $.get({url: `http://share.turinglabs.net/api/v3/ddfactory/query/${randomCount}/`, timeout: 10000}, (err, resp, data) => {
+    $.get({url: `http://jd.turinglabs.net/api/v2/jd/ddfactory/read/${randomCount}/`, timeout: 10000}, (err, resp, data) => {
       try {
         if (err) {
           console.log(`${JSON.stringify(err)}`)
