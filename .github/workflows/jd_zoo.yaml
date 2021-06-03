@@ -6,7 +6,7 @@ name: 动物连萌
 on:
     workflow_dispatch:
     schedule:
-        - cron: "13 * * * *"
+        - cron: "7 0/1 * * *"
     watch:
         types: [started]
     repository_dispatch:
