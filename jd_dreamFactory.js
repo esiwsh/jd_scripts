@@ -37,7 +37,14 @@ let tuanActiveId = ``;
 const jxOpenUrl = `openjd://virtual?params=%7B%20%22category%22:%20%22jump%22,%20%22des%22:%20%22m%22,%20%22url%22:%20%22https://wqsd.jd.com/pingou/dream_factory/index.html%22%20%7D`;
 let cookiesArr = [], cookie = '', message = '', allMessage = '';
 const inviteCodes = [
-  'nbrAAy-wj8vItm2qRIHchw==@2sAoOv9RHfHs_3MNSkzYqQ==@YqrPbmoRIXwzMWmvwrpXog==@4DBhDPNWE0_V64KUHWmINA=='
+  'T010-awtBEAR9wCjVWnYaS5kRrbA@T0225KkcREgRpwKDcRn1nKUMdQCjVWnYaS5kRrbA@T018-KQ1GU9HvwySakKhygCjVWnYaS5kRrbA@T016Z2fMmYSmIuhN96ZuCjVWnYaS5kRrbA@T0225KkcRB5P_QHSJhzxwqQNcQCjVWnYaS5kRrbA',
+  'T0225KkcREgRpwKDcRn1nKUMdQCjVWnYaS5kRrbA@T018-KQ1GU9HvwySakKhygCjVWnYaS5kRrbA@T016Z2fMmYSmIuhN96ZuCjVWnYaS5kRrbA@T0225KkcRB5P_QHSJhzxwqQNcQCjVWnYaS5kRrbA@T008674qB11BCjVWnYaS5kRrbA',
+  'T018-KQ1GU9HvwySakKhygCjVWnYaS5kRrbA@T016Z2fMmYSmIuhN96ZuCjVWnYaS5kRrbA@T0225KkcRB5P_QHSJhzxwqQNcQCjVWnYaS5kRrbA@T008674qB11BCjVWnYaS5kRrbA@T010-awtBEAR9wCjVWnYaS5kRrbA',
+  'T016Z2fMmYSmIuhN96ZuCjVWnYaS5kRrbA@T0225KkcRB5P_QHSJhzxwqQNcQCjVWnYaS5kRrbA@T008674qB11BCjVWnYaS5kRrbA@T010-awtBEAR9wCjVWnYaS5kRrbA@T0225KkcREgRpwKDcRn1nKUMdQCjVWnYaS5kRrbA',
+  'T0225KkcRB5P_QHSJhzxwqQNcQCjVWnYaS5kRrbA@T008674qB11BCjVWnYaS5kRrbA@T010-awtBEAR9wCjVWnYaS5kRrbA@T0225KkcREgRpwKDcRn1nKUMdQCjVWnYaS5kRrbA@T018-KQ1GU9HvwySakKhygCjVWnYaS5kRrbA',
+  'T008674qB11BCjVWnYaS5kRrbA@T010-awtBEAR9wCjVWnYaS5kRrbA@T0225KkcREgRpwKDcRn1nKUMdQCjVWnYaS5kRrbA@T018-KQ1GU9HvwySakKhygCjVWnYaS5kRrbA@T016Z2fMmYSmIuhN96ZuCjVWnYaS5kRrbA',
+
+  
 ];
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 $.tuanIds = [];
