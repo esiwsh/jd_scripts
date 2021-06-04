@@ -98,7 +98,7 @@ async function jdFactory() {
   await jdfactory_getTaskDetail();
   await doTask();
   await jdfactory_collectElectricity();//收集产生的电量
-  //await algorithm();//投入电力逻辑
+  await algorithm();//投入电力逻辑
   await showMsg();
 }
 function showMsg() {
