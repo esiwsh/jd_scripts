@@ -127,7 +127,7 @@ function dealCouponList(data,timeout = 0){
         for (let i in data.coupon.useable) {
           if (data.coupon.useable[i].coupontype === 2) continue       //运费券
           if (data.coupon.useable[i].coupontype === 1) continue       //支付券
-          if (data.coupon.useable[i].limitStr.match(/京贴|全品类/)) continue  //京贴、全品类 暂不处理
+          if (data.coupon.useable[i].limitStr.match(/京贴|全品类|超市|话费|小鸽有礼|生鲜|自营|旗舰店/)) continue  //京贴、全品类 暂不处理
           if (data.coupon.useable[i].discountInfo.info.length) {
             console.log(data.coupon.useable[i].limitStr + "  满" + parseFloat(data.coupon.useable[i].discountInfo.info[0].quota).toFixed(0) + "打" + parseFloat(data.coupon.useable[i].discountInfo.info[0].discountRate) * 10 + "折")
           } else {
