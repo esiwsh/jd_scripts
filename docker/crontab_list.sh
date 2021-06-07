@@ -23,8 +23,6 @@
 13 1,22,23 * * * node /scripts/jd_daily_lottery.js >> /scripts/logs/jd_daily_lottery.log 2>&1
 #jd_beauty
 1 7,12,19 * * * node /scripts/jd_beauty.js >> /scripts/logs/jd_beauty.log 2>&1
-#jd_pk
-15 8,13,18 17-31 5 * node /scripts/jd_pk.js >> /scripts/logs/jd_pk.log 2>&1
 #手机狂欢城
 0 0,12,18,21 * * * node /scripts/jd_carnivalcity.js >> /scripts/logs/jd_carnivalcity.log 2>&1
 #金榜创造营
@@ -49,6 +47,24 @@
 30 9,10 1-18 6 * node /scripts/jd_mcxhd_brandcity.js >> /scripts/logs/jd_mcxhd_brandcity.log 2>&1
 #品牌狂欢城
 30 10 1-18 6 * node /scripts/jd_brandcarnivalcity.js >> /scripts/logs/jd_brandcarnivalcity.log 2>&1
+#翻翻乐
+1 0-23/1 * 6 * node /scripts/jd_flipcards.js >> /scripts/logs/jd_flipcards.log 2>&1
+#京享值pk
+15 0,6,13,19,21 * 6 * node /scripts/jd_pk.js >> /scripts/logs/jd_pk.log 2>&1
+#大牌联合618提前购
+0 23,6 3-18 6 * node /scripts/jd_618Opencard01.js >> /scripts/logs/jd_618Opencard01.log 2>&1
+#大牌联合618提前购
+01 23,6 3-18 6 * node /scripts/jd_618Opencard02.js >> /scripts/logs/jd_618Opencard02.log 2>&1
+#大牌联合618提前购
+02 23,6 3-18 6 * node /scripts/jd_618Opencard03.js >> /scripts/logs/jd_618Opencard03.log 2>&1
+#大牌联合618提前购
+04 23,6 3-18 6 * node /scripts/jd_618Opencard04.js >> /scripts/logs/jd_618Opencard04.log 2>&1
+#大牌联合618提前购
+05 23,6 3-18 6 * node /scripts/jd_618Opencard05.js >> /scripts/logs/jd_618Opencard05.log 2>&1
+#限时盲盒
+30 7,19 1-18 6 * node /scripts/jd_limitBox.js >> /scripts/logs/jd_limitBox.log 2>&1
+#主会场红包雨
+1 20 1-18 6 * node /scripts/jd_hby_lottery.js >> /scripts/logs/jd_hby_lottery.log 2>&1
 
 ##############长期活动##############
 # 签到
@@ -122,8 +138,6 @@
 0 9,12,18 * * * node /scripts/jd_jxnc.js >> /scripts/logs/jd_jxnc.log 2>&1
 # 签到领现金
 27 7,15 * * * node /scripts/jd_cash.js >> /scripts/logs/jd_cash.log 2>&1
-# 京喜app签到
-39 7 * * * node /scripts/jx_sign.js >> /scripts/logs/jx_sign.log 2>&1
 # 闪购盲盒
 27 8 * * * node /scripts/jd_sgmh.js >> /scripts/logs/jd_sgmh.log 2>&1
 # 京东秒秒币
