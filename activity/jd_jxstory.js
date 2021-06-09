@@ -159,10 +159,10 @@ function taskList() {
                     case 4: // 招工
                       break
                     case 5: // 京喜工厂投入电力
-                      console.log(`去做任务：${vo.taskName}`)
-                      await doTask(vo.taskId)
-                      await completeTask(vo.taskId, vo.taskName)
-                      await $.wait(1000);//延迟等待一秒
+                      //console.log(`去做任务：${vo.taskName}`)
+                      //await doTask(vo.taskId)
+                      //await completeTask(vo.taskId, vo.taskName)
+                      //await $.wait(1000);//延迟等待一秒
                       break
                     case 1: // 登陆领奖
                     default:
