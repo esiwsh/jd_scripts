@@ -31,12 +31,9 @@ let cookiesArr = [], cookie = '', jdPetShareArr = [], isBox = false, notify, new
 //下面给出两个账号的填写示例（iOS只支持2个京东账号）
 let shareCodes = [ // IOS本地脚本用户这个列表填入你要助力的好友的shareCode
    //账号一的好友shareCode,不同好友的shareCode中间用@符号隔开
-  'MTAxODc2NTEzMDAwMDAwMDAyMDE4MDkwNw==@MTAxODc2NTEzMzAwMDAwMDAyMDE3NDg4OQ==@MTAxODc2NTEzMjAwMDAwMDAxMjk2NDQ3OQ==@MTAxODc2NTEzNTAwMDAwMDAzMDEzMjQwNQ==@MTAxODc2NTEzOTAwMDAwMDAzMDUwNDMwNw==',
-  'MTAxODc2NTEzMzAwMDAwMDAyMDE3NDg4OQ==@MTAxODc2NTEzMjAwMDAwMDAxMjk2NDQ3OQ==@MTAxODc2NTEzNTAwMDAwMDAzMDEzMjQwNQ==@MTAxODc2NTEzOTAwMDAwMDAzMDUwNDMwNw==@MTAxODc2NTEzMDAwMDAwMDAxMjk2NDQ5OQ==',
-  'MTAxODc2NTEzMjAwMDAwMDAxMjk2NDQ3OQ==@MTAxODc2NTEzNTAwMDAwMDAzMDEzMjQwNQ==@MTAxODc2NTEzOTAwMDAwMDAzMDUwNDMwNw==@MTAxODc2NTEzMDAwMDAwMDAxMjk2NDQ5OQ==@MTAxODc2NTEzMDAwMDAwMDAyMDE4MDkwNw==',
-  'MTAxODc2NTEzNTAwMDAwMDAzMDEzMjQwNQ==@MTAxODc2NTEzOTAwMDAwMDAzMDUwNDMwNw==@MTAxODc2NTEzMDAwMDAwMDAxMjk2NDQ5OQ==@MTAxODc2NTEzMDAwMDAwMDAyMDE4MDkwNw==@MTAxODc2NTEzMzAwMDAwMDAyMDE3NDg4OQ==',
-  'MTAxODc2NTEzOTAwMDAwMDAzMDUwNDMwNw==@MTAxODc2NTEzMDAwMDAwMDAxMjk2NDQ5OQ==@MTAxODc2NTEzMDAwMDAwMDAyMDE4MDkwNw==@MTAxODc2NTEzMzAwMDAwMDAyMDE3NDg4OQ==@MTAxODc2NTEzMjAwMDAwMDAxMjk2NDQ3OQ==',
-  'MTAxODc2NTEzMDAwMDAwMDAxMjk2NDQ5OQ==@MTAxODc2NTEzMDAwMDAwMDAyMDE4MDkwNw==@MTAxODc2NTEzMzAwMDAwMDAyMDE3NDg4OQ==@MTAxODc2NTEzMjAwMDAwMDAxMjk2NDQ3OQ==@MTAxODc2NTEzNTAwMDAwMDAzMDEzMjQwNQ==',
+  '',
+  //账号二的好友shareCode,不同好友的shareCode中间用@符号隔开
+  '',
 ]
 let message = '', subTitle = '', option = {};
 let jdNotify = false;//是否关闭通知，false打开通知推送，true关闭通知推送
@@ -451,7 +448,7 @@ async function showMsg() {
 }
 function readShareCode() {
   return new Promise(async resolve => {
-    $.get({url: `https://raw.githubusercontent.com/ZFeng3242/RandomShareCode/master/JD_Pet.json`, 'timeout': 10000}, (err, resp, data) => {
+    $.get({url: `https://raw.githubusercontent.com/DX3242/RandomShareCode/master/JD_Pet.json`, 'timeout': 10000}, (err, resp, data) => {
       try {
         if (err) {
           console.log(`${JSON.stringify(err)}`)

@@ -292,7 +292,7 @@ async function takeGetRequest(type) {
   let myRequest = ``;
   switch (type) {
     case 'GetHomePageInfo':
-      url = `https://m.jingxi.com/jxmc/queryservice/GetHomePageInfo?channel=7&sceneid=1001&_stk=channel%2Csceneid&_ste=1`;
+      url = `https://m.jingxi.com/jxmc/queryservice/GetHomePageInfo?channel=7&sceneid=1001&isgift=1&_stk=channel%2Csceneid&_ste=1`;
       url += `&h5st=${decrypt(Date.now(), '', '', url)}&_=${Date.now() + 2}&sceneval=2&g_login_type=1&callback=jsonpCBK${String.fromCharCode(Math.floor(Math.random() * 26) + "A".charCodeAt(0))}&g_ty=ls`;
       myRequest = getGetRequest(`GetHomePageInfo`, url);
       break;
@@ -376,6 +376,9 @@ function dealReturn(type, data) {
       data = JSON.parse(data.match(new RegExp(/jsonpCBK.?\((.*);*/))[1]);
       if (data.ret === 0) {
         $.homeInfo = data.data;
+        if($.homeInfo.giftcabbagevalue){
+          console.log(`登陆获得白菜：${$.homeInfo.giftcabbagevalue} 颗`);
+        }
       } else {
         console.log(`获取活动信息异常：${JSON.stringify(data)}\n`);
       }
@@ -383,7 +386,13 @@ function dealReturn(type, data) {
     case 'mowing':
     case 'jump':
     case 'cow':
-      data = JSON.parse(data.match(new RegExp(/jsonpCBK.?\((.*);*/))[1]);
+      try{
+        data = JSON.parse(data.match(new RegExp(/jsonpCBK.?\((.*);*/))[1]);
+      }catch (e) {
+        $.runFlag = false;
+        console.log(data);
+        console.log(`返回异常`);
+      }
       if (data.ret === 0) {
         $.mowingInfo = data.data;
         let add = ($.mowingInfo.addcoins || $.mowingInfo.addcoin) ? ($.mowingInfo.addcoins || $.mowingInfo.addcoin) : 0;
@@ -423,7 +432,13 @@ function dealReturn(type, data) {
       }
       break;
     case 'feed':
-      data = JSON.parse(data.match(new RegExp(/jsonpCBK.?\((.*);*/))[1]);
+      try {
+        data = JSON.parse(data.match(new RegExp(/jsonpCBK.?\((.*);*/))[1]);
+      }catch (e) {
+        console.log(`投喂失败`);
+        console.log(data);
+        $.runFeed = false;
+      }
       if (data.ret === 0) {
         console.log(`投喂成功`);
       } else if (data.ret === 2020) {
@@ -470,7 +485,7 @@ function getGetRequest(type, url) {
   if(JXUserAgent){
     ua = JXUserAgent;
   }else{
-    ua = `jdpingou;iPhone;4.9.4;14.6;${randomWord(40)};network/wifi;model/iPhone9,2;appBuild/100579;ADID/00000000-0000-0000-0000-000000000000;supportApplePay/1;hasUPPay/0;pushNoticeIsOpen/1;hasOCPay/0;supportBestPay/0;session/936;pap/JA2019_3111800;brand/apple;supportJDSHWK/1;Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E200`;
+    ua = `jdpingou;iPhone;4.9.4;14.6;${randomWord(false,40,40)};network/wifi;model/iPhone9,2;appBuild/100579;ADID/00000000-0000-0000-0000-000000000000;supportApplePay/1;hasUPPay/0;pushNoticeIsOpen/1;hasOCPay/0;supportBestPay/0;session/936;pap/JA2019_3111800;brand/apple;supportJDSHWK/1;Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E200`;
   }
   const method = `GET`;
   let headers = {

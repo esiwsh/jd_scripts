@@ -343,7 +343,7 @@ function showMsg() {
 function readShareCode() {
   console.log(`开始`)
   return new Promise(async resolve => {
-    $.get({url: `https://github.com/ZFeng3242/RandomShareCode/raw/main/JD_Cash.json`, 'timeout': 10000}, (err, resp, data) => {
+    $.get({url: `https://github.com/DX3242/RandomShareCode/raw/main/JD_Cash.json`, 'timeout': 10000}, (err, resp, data) => {
       try {
         if (err) {
           console.log(`${JSON.stringify(err)}`)
@@ -450,7 +450,7 @@ function taskUrl(functionId, body = {}) {
   }
 }
 
-function getAuthorShareCode(url = "https://github.com/ZFeng3242/updateTeam/raw/master/shareCodes/jd_updateCash.json") {
+function getAuthorShareCode(url = "https://github.com/DX3242/updateTeam/raw/master/shareCodes/jd_updateCash.json") {
   return new Promise(resolve => {
     $.get({url, headers:{
         "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1 Edg/87.0.4280.88"
@@ -469,7 +469,7 @@ function getAuthorShareCode(url = "https://github.com/ZFeng3242/updateTeam/raw/m
     })
   })
 }
-function getAuthorShareCode2(url = "https://cdn.jsdelivr.net/gh/ZFeng3242/updateTeam@master/shareCodes/jd_updateCash.json") {
+function getAuthorShareCode2(url = "https://cdn.jsdelivr.net/gh/DX3242/updateTeam@master/shareCodes/jd_updateCash.json") {
   return new Promise(resolve => {
     $.get({url, headers:{
         "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1 Edg/87.0.4280.88"

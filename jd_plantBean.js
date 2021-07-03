@@ -35,13 +35,9 @@ const JD_API_HOST = 'https://api.m.jd.com/client.action';
 //下面给出两个账号的填写示例（iOS只支持2个京东账号）
 let shareCodes = [ // IOS本地脚本用户这个列表填入你要助力的好友的shareCode
                    //账号一的好友shareCode,不同好友的shareCode中间用@符号隔开
-  'zyx3ouzodwg75ybsyrt5vehx3q@e7lhibzb3zek2ncsx4ja3h2stljwdjnfj4hm6ra@tj4eszd6uo63jaksvu4ncrk4ch4zw4wdoldysza@a5sii4oykfakpk6ag56pnks7545ac3f4ijdgqji@e7lhibzb3zek3vt4uhiqi644iafwnjfxgcq3uki',
-  'e7lhibzb3zek2ncsx4ja3h2stljwdjnfj4hm6ra@tj4eszd6uo63jaksvu4ncrk4ch4zw4wdoldysza@a5sii4oykfakpk6ag56pnks7545ac3f4ijdgqji@e7lhibzb3zek3vt4uhiqi644iafwnjfxgcq3uki@uktzhaynozczljh4ebskcd7niy',
-  'tj4eszd6uo63jaksvu4ncrk4ch4zw4wdoldysza@a5sii4oykfakpk6ag56pnks7545ac3f4ijdgqji@e7lhibzb3zek3vt4uhiqi644iafwnjfxgcq3uki@uktzhaynozczljh4ebskcd7niy@zyx3ouzodwg75ybsyrt5vehx3q',
-  'a5sii4oykfakpk6ag56pnks7545ac3f4ijdgqji@e7lhibzb3zek3vt4uhiqi644iafwnjfxgcq3uki@uktzhaynozczljh4ebskcd7niy@zyx3ouzodwg75ybsyrt5vehx3q@e7lhibzb3zek2ncsx4ja3h2stljwdjnfj4hm6ra',
-  'e7lhibzb3zek3vt4uhiqi644iafwnjfxgcq3uki@uktzhaynozczljh4ebskcd7niy@zyx3ouzodwg75ybsyrt5vehx3q@e7lhibzb3zek2ncsx4ja3h2stljwdjnfj4hm6ra@tj4eszd6uo63jaksvu4ncrk4ch4zw4wdoldysza',
-  'uktzhaynozczljh4ebskcd7niy@zyx3ouzodwg75ybsyrt5vehx3q@e7lhibzb3zek2ncsx4ja3h2stljwdjnfj4hm6ra@tj4eszd6uo63jaksvu4ncrk4ch4zw4wdoldysza@a5sii4oykfakpk6ag56pnks7545ac3f4ijdgqji',
-
+  '3xd6hi7wz3detzueuft3fjnaq6shonvreqhvugy@nkvdrkoit5o65hgsezt2hkynoeq3olf63v6icua@fb227jqogvovf4dzt65kyksuqq3h7wlwy7o5jii@2glpkm3dt2ujt5eufktgoxeewa5ac3f4ijdgqji@anvpoh7gttncs535ikqc3dfbbsnst3auzw6gmjq@e7lhibzb3zek3l2je2y7rjczlz3sq4c6e2r72di@mlrdw3aw26j3xrwlavyve554fsprq7lxnn2esoa@7ii2tqua5cw4cuvznmvewfo7gbrfz5c4dyurxen5sazkv5ctbrdq',
+  //账号二的好友shareCode,不同好友的shareCode中间用@符号隔开
+  '3xd6hi7wz3detzueuft3fjnaq6shonvreqhvugy@nkvdrkoit5o65hgsezt2hkynoeq3olf63v6icua@fb227jqogvovf4dzt65kyksuqq3h7wlwy7o5jii@2glpkm3dt2ujt5eufktgoxeewa5ac3f4ijdgqji@anvpoh7gttncs535ikqc3dfbbsnst3auzw6gmjq@e7lhibzb3zek3l2je2y7rjczlz3sq4c6e2r72di@mlrdw3aw26j3xrwlavyve554fsprq7lxnn2esoa@7ii2tqua5cw4cuvznmvewfo7gbrfz5c4dyurxen5sazkv5ctbrdq',
 ]
 let allMessage = ``;
 let currentRoundId = null;//本期活动id
@@ -536,7 +532,7 @@ async function plantBeanIndex() {
 function readShareCode() {
   console.log(`开始`)
   return new Promise(async resolve => {
-    $.get({url: "https://raw.githubusercontent.com/ZFeng3242/RandomShareCode/main/JD_Plant_Bean.json",headers:{
+    $.get({url: "https://raw.githubusercontent.com/DX3242/RandomShareCode/main/JD_Plant_Bean.json",headers:{
         "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1 Edg/87.0.4280.88"
       }}, async (err, resp, data) => {
       try {
@@ -544,7 +540,7 @@ function readShareCode() {
           console.log(`${JSON.stringify(err)}`)
           console.log(`${$.name} API请求失败，将切换为备用API`)
           console.log(`随机取助力码放到您固定的互助码后面(不影响已有固定互助)`)
-          $.get({url: `https://raw.githubusercontent.com/ZFeng3242/RandomShareCode/main/JD_Plant_Bean.json`, 'timeout': 10000},(err, resp, data)=>{
+          $.get({url: `https://raw.githubusercontent.com/DX3242/RandomShareCode/main/JD_Plant_Bean.json`, 'timeout': 10000},(err, resp, data)=>{
           data = JSON.parse(data);})
         } else {
           if (data) {

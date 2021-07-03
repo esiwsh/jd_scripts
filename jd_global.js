@@ -308,7 +308,7 @@ function readShareCode() {
   console.log(`开始`)
   return new Promise(async resolve => {
     $.get({
-      url: `http://raw.githubusercontent.com/ZFeng3242/RandomShareCode/main/JD_Global.json`,
+      url: `http://raw.githubusercontent.com/DX3242/RandomShareCode/main/JD_Global.json`,
       'timeout': 10000
     }, (err, resp, data) => {
       try {
@@ -344,7 +344,7 @@ function shareCodesFormat() {
       const tempIndex = $.index > inviteCodes.length ? (inviteCodes.length - 1) : ($.index - 1);
       $.newShareCodes = inviteCodes[tempIndex].split('@');
     }
-    const readShareCodeRes = '';//await readShareCode();
+    const readShareCodeRes = await readShareCode();
     if (readShareCodeRes && readShareCodeRes.code === 200) {
       $.newShareCodes = [...new Set([...$.newShareCodes, ...(readShareCodeRes.data || [])])];
     }
