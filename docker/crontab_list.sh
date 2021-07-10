@@ -3,18 +3,14 @@
 
 ##############短期活动##############
 
-# 极速版春香节红包
+# 极速版红包
 30 9 * * * node /scripts/jd_speed_redpocke.js >> /scripts/logs/jd_speed_redpocke.log 2>&1
 # 超级直播间红包雨
 0,30,31 20-23/1 * * * node /scripts/jd_live_redrain.js >> /scripts/logs/jd_live_redrain.log 2>&1
 # 女装盲盒 活动时间：2021-05-1到2021-05-31
 35 1,23 * * * node /scripts/jd_nzmh.js >> /scripts/logs/jd_nzmh.log 2>&1
-# 京东国际盲盒活动时间】2021年02月23日 起至 2021年03月31日 18:00:00
+# 京东国际盲盒活动时间 2021年02月23日 起至 2021年03月31日 18:00:00
 5 7,12,23 * * * node /scripts/jd_global_mh.js >> /scripts/logs/jd_global_mh.log 2>&1
-# 环球挑战赛 第三季(活动时间：2021-04-28 至 2021-05-28)
-35 6,22 * * * node /scripts/jd_global.js >> /scripts/logs/jd_global.log 2>&1
-#jd_shoplottery
-10 15 * * * node /scripts/jd_shoplottery.js >> /scripts/logs/jd_shoplottery.log 2>&1
 # jd_super_redrain
 0 0,1-23/1 * * * node /scripts/jd_super_redrain.js >> /scripts/logs/jd_super_redrain.log 2>&1
 # jd_half_redrain
@@ -23,52 +19,42 @@
 13 1,22,23 * * * node /scripts/jd_daily_lottery.js >> /scripts/logs/jd_daily_lottery.log 2>&1
 #jd_beauty
 1 7,12,19 * * * node /scripts/jd_beauty.js >> /scripts/logs/jd_beauty.log 2>&1
-#手机狂欢城
-0 0,12,18,21 * * * node /scripts/jd_carnivalcity.js >> /scripts/logs/jd_carnivalcity.log 2>&1
 #金榜创造营
 40 9,21 * * * node /scripts/jd_gold_creator.js >> /scripts/logs/jd_gold_creator.log 2>&1
-#5G超级盲盒(活动时间：2021-06-2到2021-07-31)
-0 0-23/4 * * * node /scripts/jd_mohe.js >> /scripts/logs/jd_mohe.log 2>&1
-#龙舟
-15 13 1-18 6 *node /scripts/jd_dragonboat.js >> /scripts/logs/jd_dragonboat.log 2>&1
 #新潮品牌狂欢
 30 9,10 1-18 6 * node /scripts/jd_mcxhd_brandcity.js >> /scripts/logs/jd_mcxhd_brandcity.log 2>&1
 #品牌狂欢城
 30 10 1-18 6 * node /scripts/jd_brandcarnivalcity.js >> /scripts/logs/jd_brandcarnivalcity.log 2>&1
-#翻翻乐
-1 0-23/1 * 6 * node /scripts/jd_flipcards.js >> /scripts/logs/jd_flipcards.log 2>&1
 #京享值pk
 15 0,6,13,19,21 * 6 * node /scripts/jd_pk.js >> /scripts/logs/jd_pk.log 2>&1
-#大牌联合618提前购
-0 23,6 3-18 6 * node /scripts/jd_618Opencard01.js >> /scripts/logs/jd_618Opencard01.log 2>&1
-#大牌联合618提前购
-01 23,6 3-18 6 * node /scripts/jd_618Opencard02.js >> /scripts/logs/jd_618Opencard02.log 2>&1
-#大牌联合618提前购
-02 23,6 3-18 6 * node /scripts/jd_618Opencard03.js >> /scripts/logs/jd_618Opencard03.log 2>&1
-#大牌联合618提前购
-04 23,6 3-18 6 * node /scripts/jd_618Opencard04.js >> /scripts/logs/jd_618Opencard04.log 2>&1
-#大牌联合618提前购
-05 23,6 3-18 6 * node /scripts/jd_618Opencard05.js >> /scripts/logs/jd_618Opencard05.log 2>&1
-#618母婴夺宝大作战
-15 9,21 9-20 6 * node /scripts/jd_618Opencard06.js >> /scripts/logs/jd_618Opencard06.log 2>&1
-#大牌联合'臻'宠粉丝
-15 8,20 9-23 6 * node /scripts/jd_618Opencard07.js >> /scripts/logs/jd_618Opencard07.log 2>&1
-# 618大牌联合 年中钜惠购
-01 8,20 9-23 6 * node /scripts/jd_618Opencard08.js >> /scripts/logs/jd_618Opencard08.log 2>&1
-# 大牌超级联合 618年中购
-01 3,13 9-23 6 * node /scripts/jd_618Opencard09.js >> /scripts/logs/jd_618Opencard09.log 2>&1
-# 大牌联合618年中钜惠抢先购
-01 2,12 9-23 6 * node /scripts/jd_618Opencard10.js >> /scripts/logs/jd_618Opencard10.log 2>&1
-#限时盲盒
-30 7,19 1-18 6 * node /scripts/jd_limitBox.js >> /scripts/logs/jd_limitBox.log 2>&1
-#主会场红包雨
-1 20 1-18 6 * node /scripts/jd_hby_lottery.js >> /scripts/logs/jd_hby_lottery.log 2>&1
 #京喜牧场
 20 0-23/3 * * * node /scripts/jd_jxmc.js >> /scripts/logs/jd_jxmc.log 2>&1
-#京喜领红包
-1 5,20 * 6 * node /scripts/jd_jxlhb.js >> /scripts/logs/jd_jxlhb.log 2>&1
 #东东电竞经理
 47 10 * * * node /scripts/jd_djjl.js >> /scripts/logs/jd_djjl.log 2>&1
+#星系牧场
+03 */2 * * * node /scripts/jd_qqxing.js >> /scripts/logs/jd_qqxing.log 2>&1
+#欧洲杯
+0 10 * * * node /scripts/jd_europeancup.js >> /scripts/logs/jd_europeancup.log 2>&1
+#食力街跑酷达人
+10 11 * * * node /scripts/jd_paoku.js >> /scripts/logs/jd_paoku.log 2>&1
+#天天优惠大乐透
+25 6 * * * node /scripts/jd_DrawEntrance.js >> /scripts/logs/jd_DrawEntrance.log 2>&1
+#国创
+25 8 * * * node /scripts/jd_superBrand.js >> /scripts/logs/jd_superBrand.log 2>&1
+#全民抢京豆
+1,10,20 0 * * * node /scripts/jd_qjd.js >> /scripts/logs/jd_qjd.log 2>&1
+#QQ星
+20 6,12,18 * * * node /scripts/jd_qqxing.js >> /scripts/logs/jd_qqxing.log 2>&1
+#众筹许愿池
+20 12 * * * node /scripts/jd_wishingPool.js >> /scripts/logs/jd_wishingPool.log 2>&1
+#汪汪乐园
+30 2,20 * * * node /scripts/jd_joy_park.js >> /scripts/logs/jd_joy_park.log 2>&1
+#燃动夏季
+10 0,6-23/1 * * * node /scripts/jd_summer_movement.js >> /scripts/logs/jd_summer_movement.log 2>&1
+#新签到
+10 0,18 * * * node /scripts/jd_NewSign.js >> /scripts/logs/jd_NewSign.log 2>&1
+#早期福利
+30 6 * * * node /scripts/jd_goodMorning.js >> /scripts/logs/jd_goodMorning.log 2>&1
 
 ##############长期活动##############
 # 签到
@@ -81,10 +67,6 @@
 5 6-18/6 * * * node /scripts/jd_fruit.js >> /scripts/logs/jd_fruit.log 2>&1
 # 宠汪汪
 15 */2 * * * node /scripts/jd_joy.js >> /scripts/logs/jd_joy.log 2>&1
-# 宠汪汪喂食
-15 */1 * * * node /scripts/jd_joy_feedPets.js >> /scripts/logs/jd_joy_feedPets.log 2>&1
-# 宠汪汪偷好友积分与狗粮
-13 0-21/3 * * * node /scripts/jd_joy_steal.js >> /scripts/logs/jd_joy_steal.log 2>&1
 # 摇钱树
 0 */2 * * * node /scripts/jd_moneyTree.js >> /scripts/logs/jd_moneyTree.log 2>&1
 # 东东萌宠
@@ -130,8 +112,6 @@
 10 11 * * * node /scripts/jd_jdzz.js >> /scripts/logs/jd_jdzz.log 2>&1
 # 宠汪汪邀请助力
 10 10-20/2 * * * node /scripts/jd_joy_run.js >> /scripts/logs/jd_joy_run.log 2>&1
-# crazyJoy自动每日任务
-10 7 * * * node /scripts/jd_crazy_joy.js >> /scripts/logs/jd_crazy_joy.log 2>&1
 # 京东汽车旅程赛点兑换金豆
 0 0 * * * node /scripts/jd_car_exchange.js >> /scripts/logs/jd_car_exchange.log 2>&1
 # 导到所有互助码
@@ -158,8 +138,6 @@
 22 0,12,18 * * *  node /scripts/jd_lotteryMachine.js >> /scripts/logs/jd_lotteryMachine.log 2>&1
 # 宠汪汪兑换
 0 0,8,12,16 * * * node /scripts/jd_joy_reward.js >> /scripts/logs/jd_joy_reward.log 2>&1
-# 京东疯狂的JOY挂机
-5 5 */2 * *  node /scripts/jd_crazy_joy_coin.js >> /scripts/logs/jd_crazy_joy_coin.log 2>&1
 # 京东摇一摇
 0 1,17 * * *   node /scripts/jd_shake.js >> /scripts/logs/jd_shake.log 2>&1
 # 店铺签到
