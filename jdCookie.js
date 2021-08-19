@@ -4,12 +4,12 @@
 //此处填写京东账号cookie。
 //注：github action用户cookie填写到Settings-Secrets里面，新增JD_COOKIE，多个账号的cookie使用`&`隔开或者换行
 let CookieJDs = [
-  'pt_key=AAJg-EjXADD6vPbeZIV-6RvyxD4cYHbaO5CsRM_715l6mCrXJHcJqzBy4em21BHZbPBMOAByE5Q; pt_pin=esiwsh;',
-'pt_key=AAJg-EnQADCaAN-UFyoDSK3irl0UDTDWqPdImXdcas5fD-gWWXhY1zIOBTC-HJWQOJigCC2Kkbo; pt_pin=wantn82;',
-'pt_key=AAJg9iQTADBkhlUHcHAIWUHaboaXSmQsxSLnhS8K0tbw8QwArtUxqeuNYT8YECxOaMuazd-Dhag; pt_pin=jd_4f8bfda318b61;',
-'pt_key=AAJg9kSaADAlnRrshYSqP_4dvPyzGwH0aqjrPuaHAq9-KFBt2KBKhXI69GbZKf8Z3Aj7zILYNuI; pt_pin=vivianzhuzhen;',
-'pt_key=AAJg9kVKADCEQQCAv9QE_uVUmpJTHhIUjWla1hfaphSd-jqsAcaXm_tEsgpl6NHm_hujVqBI3PE; pt_pin=%E9%AA%8F%E9%AA%8F%E7%8C%AA%E7%8C%AA;',
-'pt_key=AAJg9rb5ADBdsCMoVqpQ06h575fGnaf62k51JSpGhzTrPppxj-Cza3LpTRT9EeY7zVG9IhILqDc; pt_pin=jd_40f8e5665fc75;'
+  'pt_key=AAJhHmFyADC9iOKQtvwKh1xUOi_kQgl9Rgg1IQahcQqoE0BraMHwCWsH6v6R4ErEKRtAuOfDXXw; pt_pin=esiwsh;',
+'pt_key=AAJhHmHrADA-nUqItirEEQlihMHzAGAMo7sZAXhePSCPoyIihbyTSyFJqCBNmRbo1BeWdSPZz8M; pt_pin=wantn82;',
+'pt_key=AAJhHmJgADBDRjJDqujBcUjTURUahDiITV0KO5m0uPDrM9pOUrBsAA8KQSlaQVKPcKMtTCxUZjc; pt_pin=jd_4f8bfda318b61;',
+'pt_key=AAJhHmMyADCyGjTJXfqRGi6dFfrhuvfpTSdLDSlGPXfNpdUKGeKnSsjSjQOkT2MQXJdaX068qsE; pt_pin=vivianzhuzhen;',
+'pt_key=AAJhHmOZADBMLZV_-Iinq9xevGS9MlZ1tRVXXbZwu11102M-hdaS2hDgzz2q7iAAX-DszazvGwQ; pt_pin=%E9%AA%8F%E9%AA%8F%E7%8C%AA%E7%8C%AA;',
+'pt_key=AAJhHmTEADDb8VyOYY705mjP1RbYiNji68a-6eFL47t-2capZpFEqdzIWX0Bu_IpoLIcnRpnH40; pt_pin=jd_40f8e5665fc75;'
 ]
 // 判断github action里面是否有京东ck
 if (process.env.JD_COOKIE) {
