@@ -54,14 +54,6 @@
 30 1,6,12,15,18 * * * node /scripts/jd_jxlhb.js >> /scripts/logs/jd_jxlhb.log 2>&1
 #京喜首页签到
 20 1 * * * node /scripts/jx_sign.js >> /scripts/logs/jx_sign.log 2>&1
-#jd_opencard2
-10 0,9,18,22 * * * node /scripts/jd_opencard2.js >> /scripts/logs/jd_opencard2.log 2>&1
-#jd_opencard3
-20 0,9,18,22 * * * node /scripts/jd_opencard3.js >> /scripts/logs/jd_opencard3.log 2>&1
-#jd_opencard4
-15 0,9,18,22 * * * node /scripts/jd_opencard4.js >> /scripts/logs/jd_opencard4.log 2>&1
-#jd_opencard5
-25 0,9,18,22 * * * node /scripts/jd_opencard5.js >> /scripts/logs/jd_opencard5.log 2>&1
 #特物
 30 8,9 * * * node /scripts/jd_productZ4Brand.js >> /scripts/logs/jd_productZ4Brand.log 2>&1
 #女装盲盒
@@ -70,10 +62,6 @@
 34 6,18 * * * node /scripts/jd_fan.js >> /scripts/logs/jd_fan.log 2>&1
 #5g超级盲盒
 0 */4 * * * node /scripts/jd_mohe.js >> /scripts/logs/jd_mohe.log 2>&1
-# 手机狂欢城(8.9-8.28)
-0 0,12,18,21 * * * node /scripts/jd_carnivalcity.js >> /scripts/logs/jd_carnivalcity.log 2>&1
-# 手机狂欢城助力(8.9-8.28)
-10 0,8 * * * node /scripts/jd_carnivalcity_help.js >> /scripts/logs/jd_carnivalcity_help.log 2>&1
 # 荣耀换新季
 0 1 * * * node /scripts/jd_ryhxj.js >> /scripts/logs/jd_ryhxj.log 2>&1
 # 来电好物季
@@ -86,10 +74,8 @@
 35 4,7 * * * node /scripts/jd_jxg.js >> /scripts/logs/jd_jxg.log 2>&1
 # 汽车生活季
 30 9,21 12-20 8 * node /scripts/jd_qcshj.js >> /scripts/logs/jd_qcshj.log 2>&1
-# 小米星空大冒险
-31 8,22 13-31 8 * node /scripts/jd_xmGame.js >> /scripts/logs/jd_xmGame.log 2>&1
-#明星小店
-10 9,18 9-25 8 * node /scripts/jd_star_shop.js >> /scripts/logs/jd_star_shop.log 2>&1
+# 领券中心签到
+11 0 * * * node /scripts/jd_ccSign.js >> /scripts/logs/jd_ccSign.log 2>&1
 
 ##############长期活动##############
 # 签到
@@ -118,14 +104,16 @@
 55 23 * * * node /scripts/jd_unsubscribe.js >> /scripts/logs/jd_unsubscribe.log 2>&1
 # 京豆变动通知
 0 10 * * * node /scripts/jd_bean_change.js >> /scripts/logs/jd_bean_change.log 2>&1
+# 京豆变动通知all
+0 21 * * * node /scripts/jd_bean_change_all.js >> /scripts/logs/jd_bean_change_all.log 2>&1
+# 京东月资产变动通知
+10 7 1-31/7 * * node /scripts/jd_bean_MonthChange.js >> /scripts/logs/jd_bean_MonthChange.log 2>&1
 # 京东排行榜
 11 9 * * * node /scripts/jd_rankingList.js >> /scripts/logs/jd_rankingList.log 2>&1
 # 天天提鹅
 18 * * * * node /scripts/jd_daily_egg.js >> /scripts/logs/jd_daily_egg.log 2>&1
 # 金融养猪
 12 * * * * node /scripts/jd_pigPet.js >> /scripts/logs/jd_pigPet.log 2>&1
-# 点点券
-20 0,20 * * * node /scripts/jd_necklace.js >> /scripts/logs/jd_necklace.log 2>&1
 # 京喜工厂
 20 * * * * node /scripts/jd_dreamFactory.js >> /scripts/logs/jd_dreamFactory.log 2>&1
 # 京喜工厂开团
@@ -167,25 +155,23 @@
 # 京东抽奖机
 22 0,12,18 * * *  node /scripts/jd_lotteryMachine.js >> /scripts/logs/jd_lotteryMachine.log 2>&1
 # 宠汪汪
-15 */2 * * * node /scripts/jd_joy.js >> /scripts/logs/jd_joy.log 2>&1
-#宠汪汪赛跑
-45 14,19 * * * node /scripts/jd_joy_run.js >> /scripts/logs/jd_joy_run.log 2>&1
-# 宠汪汪偷狗粮
-10 0-21/3 * * * node /scripts/jd_joy_steal.js >> /scripts/logs/jd_joy_steal.log 2>&1
-# 宠汪汪兑换
-0 0,8,12,16 * * * node /scripts/jd_joy_reward.js >> /scripts/logs/jd_joy_reward.log 2>&1
+45 */2,23 * * * node /scripts/jd_joy.js >> /scripts/logs/jd_joy.log 2>&1
+# 宠汪汪积分兑换京豆
+59 7,15,23 * * * node /scripts/jd_joy_reward.js >> /scripts/logs/jd_joy_reward.log 2>&1
+# 宠汪汪喂食
+35 */1 * * * node /scripts/jd_joy_feedPets.js >> /scripts/logs/jd_joy_feedPets.log 2>&1
+# 宠汪汪偷好友积分与喂食
+30 0-21/3 * * * node /scripts/jd_joy_steal.js >> /scripts/logs/jd_joy_steal.log 2>&1
+# 宠汪汪邀请助力
+10 13-20/1 * * * node /scripts/jd_joy_run.js >> /scripts/logs/jd_joy_run.log 2>&1
 # 京东摇一摇
 0 1,17 * * * node /scripts/jd_shake.js >> /scripts/logs/jd_shake.log 2>&1
-# 保价
-0 12 */3 * * node /scripts/jd_priceProtect.js >> /scripts/logs/jd_priceProtect.log 2>&1
 
 ##############默认注释活动##############
 # 京东试用（默认注释，请配合取关脚本使用）
 #10 0 * * *  node /scripts/jd_try.js >> /scripts/logs/jd_try.log 2>&1
 # 删除优惠券(默认注释，如需要自己开启，如有误删，已删除的券可以在回收站中还原，慎用)
 #20 9 * * 6 node /scripts/jd_delCoupon.js >> /scripts/logs/jd_delCoupon.log 2>&1
-# 京东家庭号(暂不知最佳cron)
-# */20 * * * * node /scripts/jd_family.js >> /scripts/logs/jd_family.log 2>&1
 # 监控crazyJoy分红
 # 10 7 * * * node /scripts/jd_crazy_joy_bonus.js >> /scripts/logs/jd_crazy_joy_bonus.log 2>&1
 # jd_cash_exchange

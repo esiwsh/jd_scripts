@@ -4,7 +4,7 @@
 //此处填写京东账号cookie。
 //注：github action用户cookie填写到Settings-Secrets里面，新增JD_COOKIE，多个账号的cookie使用`&`隔开或者换行
 let CookieJDs = [
-  'pt_key=AAJhHmFyADC9iOKQtvwKh1xUOi_kQgl9Rgg1IQahcQqoE0BraMHwCWsH6v6R4ErEKRtAuOfDXXw; pt_pin=esiwsh;',
+  'pt_key=AAJhLWWnADDM41g_BPSNMDvTqF52mikjFeG85y_4Sf_wRf6LiQ_sx805mkL47N6HbeGAsDeqhZI;pt_pin=esiwsh;',
 'pt_key=AAJhHmHrADA-nUqItirEEQlihMHzAGAMo7sZAXhePSCPoyIihbyTSyFJqCBNmRbo1BeWdSPZz8M; pt_pin=wantn82;',
 'pt_key=AAJhHmJgADBDRjJDqujBcUjTURUahDiITV0KO5m0uPDrM9pOUrBsAA8KQSlaQVKPcKMtTCxUZjc; pt_pin=jd_4f8bfda318b61;',
 'pt_key=AAJhHmMyADCyGjTJXfqRGi6dFfrhuvfpTSdLDSlGPXfNpdUKGeKnSsjSjQOkT2MQXJdaX068qsE; pt_pin=vivianzhuzhen;',

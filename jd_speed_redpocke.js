@@ -1,8 +1,8 @@
 /*
 京东极速版红包
 自动提现微信现金
-
-活动时间：2021-4-6至2021-5-5
+更新时间：2021-8-2
+活动时间：2021-4-6至2021-5-30
 活动地址：https://prodev.m.jd.com/jdlite/active/31U4T6S4PbcK83HyLPioeCWrD63j/index.html
 活动入口：京东极速版-领红包
 已支持IOS双京东账号,Node.js支持N个京东账号
@@ -10,17 +10,14 @@
 ============Quantumultx===============
 [task_local]
 #京东极速版红包
-0 0 * * * https://gitee.com/lxk0301/jd_scripts/raw/master/jd_speed_redpocke.js, tag=京东极速版红包, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
-
+20 0,22 * * * jd_speed_redpocke.js, tag=京东极速版红包, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
 ================Loon==============
 [Script]
-cron "0 0 * * *" script-path=https://gitee.com/lxk0301/jd_scripts/raw/master/jd_speed_redpocke.js,tag=京东极速版红包
-
+cron "20 0,22 * * *" script-path=jd_speed_redpocke.js,tag=京东极速版红包
 ===============Surge=================
-京东极速版红包 = type=cron,cronexp="0 0 * * *",wake-system=1,timeout=3600,script-path=https://gitee.com/lxk0301/jd_scripts/raw/master/jd_speed_redpocke.js
-
+京东极速版红包 = type=cron,cronexp="20 0,22 * * *",wake-system=1,timeout=3600,script-path=jd_speed_redpocke.js
 ============小火箭=========
-京东极速版红包 = type=cron,script-path=https://gitee.com/lxk0301/jd_scripts/raw/master/jd_speed_redpocke.js, cronexpr="0 0 * * *", timeout=3600, enable=true
+京东极速版红包 = type=cron,script-path=jd_speed_redpocke.js, cronexpr="20 0,22 * * *", timeout=3600, enable=true
 */
 
 const $ = new Env('京东极速版红包');
@@ -29,9 +26,8 @@ const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 let cookiesArr = [], cookie = '', message;
-const linkId = "AkOULcXbUA_8EAPbYLLMgg";
-const signLinkId = '9WA12jYGulArzWS7vcrwhw';
-
+const linkId = "9wdf1YTT2L59Vr-meKskLA";
+const signLinkId = '31U4T6S4PbcK83HyLPioeCWrD63j';
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
     cookiesArr.push(jdCookieNode[item])
@@ -116,7 +112,7 @@ async function sign() {
         "Connection": "keep-alive",
         "User-Agent": "jdltapp;iPhone;3.3.2;14.5.1network/wifi;hasUPPay/0;pushNoticeIsOpen/1;lang/zh_CN;model/iPhone13,2;addressid/137923973;hasOCPay/0;appBuild/1047;supportBestPay/0;pv/467.11;apprpd/MyJD_Main;",
         "Accept-Language": "zh-Hans-CN;q=1, en-CN;q=0.9, zh-Hant-CN;q=0.8",
-        'Referer': 'https://daily-redpacket.jd.com/?activityId=9WA12jYGulArzWS7vcrwhw',
+        'Referer': 'https://prodev.m.jd.com/jdlite/active/31U4T6S4PbcK83HyLPioeCWrD63j',
         "Accept-Encoding": "gzip, deflate, br"
       }
     }
@@ -151,7 +147,7 @@ async function sign() {
 function reward_query() {
   return new Promise(resolve => {
     $.get(taskGetUrl("spring_reward_query", {
-      "inviter": ["hJyuwiDvDEc5-jIeec4Iyg", "r3yIDGE86HSsdtyFlrPHJHu_0mNpX_AnBREYO-c3BFY"][Math.floor((Math.random() * 2))],
+      "inviter": ["_SaOxKKzZ3Ig2gsDhzafRrwaNlx7z2NwTQlnFmxIWN8","0lOr13FyIBDUulR6JgUKVg"][Math.floor((Math.random() * 2))],
       linkId
     }), async (err, resp, data) => {
       try {
@@ -178,7 +174,7 @@ function reward_query() {
 }
 async function redPacket() {
   return new Promise(resolve => {
-    $.get(taskGetUrl("spring_reward_receive",{"inviter":["hJyuwiDvDEc5-jIeec4Iyg","r3yIDGE86HSsdtyFlrPHJHu_0mNpX_AnBREYO-c3BFY"][Math.floor((Math.random()*2))],linkId}),
+    $.get(taskGetUrl("spring_reward_receive",{"inviter":["_SaOxKKzZ3Ig2gsDhzafRrwaNlx7z2NwTQlnFmxIWN8","0lOr13FyIBDUulR6JgUKVg"][Math.floor((Math.random()*2))],linkId}),
         async (err, resp, data) => {
           try {
             if (err) {
@@ -254,7 +250,7 @@ function signPrizeDetailList() {
         "Connection": "keep-alive",
         "User-Agent": "jdltapp;iPhone;3.3.2;14.5.1network/wifi;hasUPPay/0;pushNoticeIsOpen/1;lang/zh_CN;model/iPhone13,2;addressid/137923973;hasOCPay/0;appBuild/1047;supportBestPay/0;pv/467.11;apprpd/MyJD_Main;",
         "Accept-Language": "zh-Hans-CN;q=1, en-CN;q=0.9, zh-Hant-CN;q=0.8",
-        'Referer': 'https://daily-redpacket.jd.com/?activityId=9WA12jYGulArzWS7vcrwhw',
+        'Referer': 'https://prodev.m.jd.com/jdlite/active/31U4T6S4PbcK83HyLPioeCWrD63j',
         "Accept-Encoding": "gzip, deflate, br"
       }
     }
@@ -316,7 +312,7 @@ function apCashWithDraw(id, poolBaseId, prizeGroupId, prizeBaseId) {
         "Connection": "keep-alive",
         "User-Agent": "jdltapp;iPhone;3.3.2;14.5.1network/wifi;hasUPPay/0;pushNoticeIsOpen/1;lang/zh_CN;model/iPhone13,2;addressid/137923973;hasOCPay/0;appBuild/1047;supportBestPay/0;pv/467.11;apprpd/MyJD_Main;",
         "Accept-Language": "zh-Hans-CN;q=1, en-CN;q=0.9, zh-Hant-CN;q=0.8",
-        'Referer': 'https://daily-redpacket.jd.com/?activityId=9WA12jYGulArzWS7vcrwhw',
+        'Referer': 'https://prodev.m.jd.com/jdlite/active/31U4T6S4PbcK83HyLPioeCWrD63j',
         "Accept-Encoding": "gzip, deflate, br"
       }
     }
