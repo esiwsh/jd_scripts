@@ -13,16 +13,10 @@
 4 10,19 * * * node /scripts/jd_market_lottery.js >> /scripts/logs/jd_market_lottery.log 2>&1
 #jd_jintie
 10 0 * * * node /scripts/jd_jintie.js >> /scripts/logs/jd_jintie.log 2>&1
-#jd_super_redrain
-1 0-23/1 * * * node /scripts/jd_super_redrain.js >> /scripts/logs/jd_super_redrain.log 2>&1
-#jd_half_redrain
-30 20-23/1 * * * node /scripts/jd_half_redrain.js >> /scripts/logs/jd_half_redrain.log 2>&1
 #jd_daily_lottery
 13 1,22,23 * * * node /scripts/jd_daily_lottery.js >> /scripts/logs/jd_daily_lottery.log 2>&1
 #jd_beauty
 1 7,12,19 * * * node /scripts/jd_beauty.js >> /scripts/logs/jd_beauty.log 2>&1
-#jd_live_redrain
-0,30 0-23/1 * * * node /scripts/jd_live_redrain.js >> /scripts/logs/jd_live_redrain.log 2>&1
 #金榜创造营
 40 9,21 * * * node /scripts/jd_gold_creator.js >> /scripts/logs/jd_gold_creator.log 2>&1
 #5g超级盲盒
@@ -47,18 +41,24 @@
 0-59/30 * * * * node /scripts/jd_moneyTree_help.js >> /scripts/logs/jd_moneyTree_help.log 2>&1
 # MMdou
 21 9 * * * node /scripts/jd_MMdou.js >> /scripts/logs/jd_MMdou.log 2>&1
-# jd_opencard13
-11 1,9,16 * * * node /scripts/jd_opencard13.js >> /scripts/logs/jd_opencard13.log 2>&1
-# jd_opencard14
-11 2,10,17 * * * node /scripts/jd_opencard14.js >> /scripts/logs/jd_opencard14.log 2>&1
 # jd_opencard15
-15 3,11,18 * * * node /scripts/jd_opencard15.js >> /scripts/logs/jd_opencard15.log 2>&1
+15 2,10,17 * * * node /scripts/jd_opencard15.js >> /scripts/logs/jd_opencard15.log 2>&1
 # jd_opencard16
-30 9,21 1-21 9 * node /scripts/jd_opencard16.js >> /scripts/logs/jd_opencard16.log 2>&1
+30 3,11,18 1-21 9 * node /scripts/jd_opencard16.js >> /scripts/logs/jd_opencard16.log 2>&1
 # jd_opencard17
-30 7,19 1-21 9 * node /scripts/jd_opencard17.js >> /scripts/logs/jd_opencard17.log 2>&1
+45 4,12,19 * * * node /scripts/jd_opencard17.js >> /scripts/logs/jd_opencard17.log 2>&1
 # jd_opencard18
-30 6,15 1-21 9 * node /scripts/jd_opencard18.js >> /scripts/logs/jd_opencard18.log 2>&1
+30 2,8,17 * * * node /scripts/jd_opencard18.js >> /scripts/logs/jd_opencard18.log 2>&1
+# jd_opencard19
+15 6,14,21 * * * node /scripts/jd_opencard19.js >> /scripts/logs/jd_opencard19.log 2>&1
+# jd_opencard20
+30 7,15,22 * * * node /scripts/jd_opencard20.js >> /scripts/logs/jd_opencard20.log 2>&1
+# jd_opencard21
+45 8,16,23 * * * node /scripts/jd_opencard21.js >> /scripts/logs/jd_opencard21.log 2>&1
+# jd_opencard22
+0 1,5,16 * * * node /scripts/jd_opencard22.js >> /scripts/logs/jd_opencard22.log 2>&1
+# jd_opencard23
+15 1,10,18 * * * node /scripts/jd_opencard23.js >> /scripts/logs/jd_opencard23.log 2>&1
 #京喜领88元红包
 30 1,6,12,15,18 * * * node /scripts/jd_jxlhb.js >> /scripts/logs/jd_jxlhb.log 2>&1
 #京喜首页签到
@@ -79,6 +79,20 @@
 12 9,15 1-30 9,10 * node /scripts/jd_xinxiangyin.js >> /scripts/logs/jd_xinxiangyin.log
 # 内容鉴赏官
 15 3,6 * * * node /scripts/jd_connoisseur.js >> /scripts/logs/jd_connoisseur.log 2>&1
+# jd_Task2
+45 0,16 * * * node /scripts/jd_Task2.js >> /scripts/logs/jd_Task2.log 2>&1
+# jd_Task3
+30 0,12 * * * node /scripts/jd_Task3.js >> /scripts/logs/jd_Task3.log 2>&1
+# 母婴-跳跳乐
+1 0,11,21 * * * node /scripts/jd_jump.js >> /scripts/logs/jd_jump.log 2>&1
+# 明星小店
+12 9,19 10-17 9 * node /scripts/jd_star_shop.js >> /scripts/logs/jd_star_shop.log 2>&1
+# young
+30 0,4,13,22 * * * node /scripts/jd_young.js >> /scripts/logs/jd_young.log 2>&1
+#星系牧场
+45 0,6-23/4 * * * node /scripts/jd_qqxing.js >> /scripts/logs/jd_qqxing.log 2>&1
+# 手机狂欢城(2021-9-16至2021-10-1)
+0 0-18/6 * * * node /scripts/jd_carnivalcity.js >> /scripts/logs/jd_carnivalcity.log 2>&1
 
 ##############长期活动##############
 # 签到
@@ -109,8 +123,6 @@
 0 10 * * * node /scripts/jd_bean_change.js >> /scripts/logs/jd_bean_change.log 2>&1
 # 京东月资产变动通知
 10 7 1-31/7 * * node /scripts/jd_bean_MonthChange.js >> /scripts/logs/jd_bean_MonthChange.log 2>&1
-# 天天提鹅
-18 * * * * node /scripts/jd_daily_egg.js >> /scripts/logs/jd_daily_egg.log 2>&1
 # 金融养猪
 12 * * * * node /scripts/jd_pigPet.js >> /scripts/logs/jd_pigPet.log 2>&1
 # 京喜工厂
@@ -177,3 +189,7 @@
 #0 9,12,18 * * * node /scripts/jd_jxnc.js >> /scripts/logs/jd_jxnc.log 2>&1
 # 价格保护
 # 48 */8 * * * node /scripts/jd_work_price.js >> /scripts/logs/jd_work_price.log 2>&1
+# 惊喜红包返现助力
+# 48 20 * * * node /scripts/jx_aid_cashback.js >> /scripts/logs/jx_aid_cashback.log 2>&1
+# 东东世界
+#25 2,10 * * * node /scripts/jd_ddworld.js >> /scripts/logs/jd_ddworld.log 2>&1
