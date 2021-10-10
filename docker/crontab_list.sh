@@ -41,14 +41,6 @@
 0-59/30 * * * * node /scripts/jd_moneyTree_help.js >> /scripts/logs/jd_moneyTree_help.log 2>&1
 # MMdou
 21 9 * * * node /scripts/jd_MMdou.js >> /scripts/logs/jd_MMdou.log 2>&1
-# jd_opencard15
-15 2,10,17 * * * node /scripts/jd_opencard15.js >> /scripts/logs/jd_opencard15.log 2>&1
-# jd_opencard17
-45 4,12,19 * * * node /scripts/jd_opencard17.js >> /scripts/logs/jd_opencard17.log 2>&1
-# jd_opencard19
-15 6,14,21 * * * node /scripts/jd_opencard19.js >> /scripts/logs/jd_opencard19.log 2>&1
-# jd_opencard16
-30 3,9,16 * * * node /scripts/jd_opencard16.js >> /scripts/logs/jd_opencard16.log 2>&1
 #京喜领88元红包
 30 1,6,12,15,18 * * * node /scripts/jd_jxlhb.js >> /scripts/logs/jd_jxlhb.log 2>&1
 #京喜首页签到
@@ -69,24 +61,21 @@
 12 9,15 1-30 9,10 * node /scripts/jd_xinxiangyin.js >> /scripts/logs/jd_xinxiangyin.log
 # 内容鉴赏官
 15 3,6 * * * node /scripts/jd_connoisseur.js >> /scripts/logs/jd_connoisseur.log 2>&1
-# jd_Task2
-45 0,16 * * * node /scripts/jd_Task2.js >> /scripts/logs/jd_Task2.log 2>&1
-# jd_Task3
-30 0,12 * * * node /scripts/jd_Task3.js >> /scripts/logs/jd_Task3.log 2>&1
 # 母婴-跳跳乐
 1 0,11,21 * * * node /scripts/jd_jump.js >> /scripts/logs/jd_jump.log 2>&1
-# 明星小店
-12 9,19 10-17 9 * node /scripts/jd_star_shop.js >> /scripts/logs/jd_star_shop.log 2>&1
-# young
-30 0,4,13,22 * * * node /scripts/jd_young.js >> /scripts/logs/jd_young.log 2>&1
 #星系牧场
 45 0,6-23/4 * * * node /scripts/jd_qqxing.js >> /scripts/logs/jd_qqxing.log 2>&1
-# 手机狂欢城(2021-9-16至2021-10-1)
-0 0-18/6 * * * node /scripts/jd_carnivalcity.js >> /scripts/logs/jd_carnivalcity.log 2>&1
 # 京东小魔方
 10 2,8 * * * node /scripts/jd_mf.js >> /scripts/logs/jd_mf.log 2>&1
 #芥么签到
 11 9,18 * * * node /scripts/jd_jmsign.js >> /scripts/logs/jd_jmsign.log 2>&1
+#芥么赚好礼
+37 0,11 * * * node /scripts/jd_jmzhl.js >> /scripts/logs/jd_jmzhl.log 2>&1
+#jd_opencard1
+30 3,10,22 * * * node /scripts/jd_opencard1.js >> /scripts/logs/jd_opencard1.log 2>&1
+#jd_opencard2
+15 5,12,23 * * * node /scripts/jd_opencard2.js >> /scripts/logs/jd_opencard2.log 2>&1
+
 
 ##############长期活动##############
 # 签到
@@ -157,6 +146,8 @@
 5 * * * * node /scripts/jd_cfd_mooncake.js >> /scripts/logs/jd_cfd_mooncake.log 2>&1 
 # 京喜财富岛提现
 0 0 * * *  node /scripts/jx_cfdtx.js >> /scripts/logs/jx_cfdtx.log 2>&1
+# 京喜财富岛热气球
+30 * * * * node /scripts/jd_cfd_loop.js >> /scripts/logs/jd_cfd_loop.log 2>&1
 # 京东极速版
 48 0,12,18 * * *  node /scripts/jd_speed_sign.js >> /scripts/logs/jd_speed_sign.log 2>&1
 # 京东抽奖机
