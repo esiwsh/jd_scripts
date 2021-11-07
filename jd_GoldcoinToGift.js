@@ -22,12 +22,7 @@ const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 let jdNotify = true;//是否关闭通知，false打开通知推送，true关闭通知推送
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '', message, allMessage = '';
-$.shareId = ['Sca8j6_8DUbvfs_WW41tknCCxA2Fn4xoyQZk',
-'W9S7jLKsQ0bvMoPWW5hqiJlTvp_KOQmPbtpqFg',
-'RtGKzLqsE1z3L4CbH4Y115on5huYLg0eRAqPNJBmGjSUuiJkGA',
-'Wtyjkb36C1LmNNvPSZh_mrm2QAqa_cv4PaQfWVZG9OIuZw',
-'xR9aEXYblrY5qT8AW5h_1lKlnzHcglYZ0xtYeQY3sMR2',
-'RtGKzOzySV-meIWfQYc00x35Cmo9bX6Zf0IkmFrFuCEJlj1ftg'];
+$.shareId = [];
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
     cookiesArr.push(jdCookieNode[item])

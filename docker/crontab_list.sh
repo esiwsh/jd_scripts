@@ -69,22 +69,38 @@
 11 9,18 * * * node /scripts/jd_jmsign.js >> /scripts/logs/jd_jmsign.log 2>&1
 #芥么赚好礼
 37 0,11 * * * node /scripts/jd_jmzhl.js >> /scripts/logs/jd_jmzhl.log 2>&1
-#jd_opencard3
-45 7,14,20 * * * node /scripts/jd_opencard3.js >> /scripts/logs/jd_opencard3.log 2>&1
-#jd_opencard4
-5 0,7,16 * * * node /scripts/jd_opencard4.js >> /scripts/logs/jd_opencard4.log 2>&1
-#jd_opencard5
-15 0,12,15 * * * node /scripts/jd_opencard5.js >> /scripts/logs/jd_opencard5.log 2>&1
-#jd_opencard6
-0 1,9,23 * * * node /scripts/jd_opencard6.js >> /scripts/logs/jd_opencard6.log 2>&1
 #jd_opencard7
-15 1,13,22 * * * node /scripts/jd_opencard7.js >> /scripts/logs/jd_opencard7.log 2>&1
+5 0,7,16 * * * node /scripts/jd_opencard7.js >> /scripts/logs/jd_opencard7.log 2>&1
+#jd_opencard8
+15 0,12,18 * * * node /scripts/jd_opencard8.js >> /scripts/logs/jd_opencard8.log 2>&1
+#jd_opencard9
+30 2,8,21 * * * node /scripts/jd_opencard9.js >> /scripts/logs/jd_opencard9.log 2>&1
+#jd_opencard10
+40 4,17,23 * * * node /scripts/jd_opencard10.js >> /scripts/logs/jd_opencard10.log 2>&1
+#jd_opencard11
+45 7,14,20 * * * node /scripts/jd_opencard11.js >> /scripts/logs/jd_opencard11.log 2>&1
+#jd_opencard12
+8 9,15,19 * * * node /scripts/jd_opencard12.js >> /scripts/logs/jd_opencard12.log 2>&1
+#jd_opencard13
+39 10,13,23 * * * node /scripts/jd_opencard13.js >> /scripts/logs/jd_opencard13.log 2>&1
+#东东世界
+25 2,10 * * * node /scripts/jd_ddworld.js >> /scripts/logs/jd_ddworld.log 2>&1
 #jd_ddworld_exchange
 0,45 0,9 * * * node /scripts/jd_ddworld_exchange.js >> /scripts/logs/jd_ddworld_exchange.log 2>&1
-# 攒金币 赢大礼
-22 0,8 * * * node /scripts/jd_GoldcoinToGift.js >> /scripts/logs/jd_GoldcoinToGift.log 2>&1
-# 城城分现金
-45 * * * * node /scripts/jd_city.js >> /scripts/logs/jd_city.log 2>&1
+# 预售福利机
+5 0,2 * * * node /scripts/jd_ys.js >> /scripts/logs/jd_ys.log 2>&1
+# 手机狂欢城
+0 0,12,18,21 * * * node /scripts/jd_carnivalcity.js >> /scripts/logs/jd_carnivalcity.log 2>&1
+# 手机狂欢城助力
+10 0,8 * * * node /scripts/jd_carnivalcity_help.js >> /scripts/logs/jd_carnivalcity_help.log 2>&1
+# 推一推
+0 6-23/4 * * * node /scripts/jd_tyt.js >> /scripts/logs/jd_tyt.log 2>&1
+# 省钱大赢家翻翻乐
+20 * * * * node /scripts/jd_flipcards.js >> /scripts/logs/jd_flipcards.log 2>&1
+# 双十一红包
+1 0,12,18 * * * node /scripts/jd_doubleEleven.js >> /scripts/logs/jd_doubleEleven.log 2>&1
+# 极速版-发财寻宝
+20 1,9,16 * * * node /scripts/jd_fcxb.js >> /scripts/logs/jd_fcxb.log 2>&1
 
 ##############长期活动##############
 # 签到
@@ -187,5 +203,3 @@
 # 48 */8 * * * node /scripts/jd_work_price.js >> /scripts/logs/jd_work_price.log 2>&1
 # 惊喜红包返现助力
 # 48 20 * * * node /scripts/jx_aid_cashback.js >> /scripts/logs/jx_aid_cashback.log 2>&1
-# 东东世界
-#25 2,10 * * * node /scripts/jd_ddworld.js >> /scripts/logs/jd_ddworld.log 2>&1
